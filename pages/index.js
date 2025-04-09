@@ -19,7 +19,7 @@ export default function Home() {
 				<div className='flex flex-col sm:flex-row gap-4 animate-fade-in delay-200'>
 					<a
 						href='https://calendly.com/kalvinsev/30min'
-						className='bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm shadow-md hover:scale-105 transition-transform text-center'
+							className='bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm shadow-md hover:scale-105 transition-transform text-center'
 					>
 						Book a Free Call
 					</a>
@@ -41,7 +41,7 @@ export default function Home() {
 					Selected Work
 				</h2>
 				<div className='space-y-8'>
-					<div className='bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in'>
+					<div className='bg-gray-700/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in'>
 						<h3 className='text-lg sm:text-xl font-semibold'>
 							Startup Admin Dashboard
 						</h3>
@@ -54,7 +54,7 @@ export default function Home() {
 							hours/month.
 						</p>
 					</div>
-					<div className='bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in delay-100'>
+					<div className='bg-gray-700/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in delay-100'>
 						<h3 className='text-lg sm:text-xl font-semibold'>
 							E-commerce Landing Page
 						</h3>
@@ -66,7 +66,7 @@ export default function Home() {
 							Motion.
 						</p>
 					</div>
-					<div className='bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in delay-200'>
+					<div className='bg-gray-700/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in delay-200'>
 						<h3 className='text-lg sm:text-xl font-semibold'>
 							Creator Client Portal
 						</h3>
