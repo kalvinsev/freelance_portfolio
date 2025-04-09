@@ -18,7 +18,7 @@ export default function Home() {
 				</p>
 				<div className='flex flex-col sm:flex-row gap-4 animate-fade-in delay-200'>
 					<a
-						href='#contact'
+						href='https://calendly.com/kalvinsev/30min'
 						className='bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm shadow-md hover:scale-105 transition-transform text-center'
 					>
 						Book a Free Call
