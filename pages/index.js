@@ -6,10 +6,9 @@ import { useEffect } from "react";
 export default function Home() {
 	useEffect(() => {
 		AOS.init({ once: true });
-		// Force refresh after small delay to recalculate positions
 		setTimeout(() => {
-			AOS.refresh();
-		}, 200);
+			AOS.refreshHard();
+		}, 100);
 	}, []);
 
 	return (
@@ -20,7 +19,7 @@ export default function Home() {
 			{/* Header */}
 			<header className='mb-20' data-aos='fade-down'>
 				<h1 className='text-3xl sm:text-5xl font-bold mb-4 tracking-tight'>
-					Software / Web Developer
+					Hi, I'm Kalvin
 				</h1>
 				<p className='text-lg sm:text-xl mb-6 max-w-xl leading-relaxed'>
 					I build clean, custom software that
@@ -29,7 +28,7 @@ export default function Home() {
 				</p>
 				<div className='flex flex-col sm:flex-row gap-4'>
 					<a
-						href='https://calendly.com/kalvinsev/30min'
+						href='#contact'
 						className='bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm shadow-md hover:scale-105 transition-transform text-center'
 					>
 						Book a Free Call
@@ -44,7 +43,12 @@ export default function Home() {
 			</header>
 
 			{/* Work Section */}
-			<section id='work' className='mb-20' data-aos='fade-up'>
+			<section
+				id='work'
+				className='mb-20'
+				data-aos='fade-up'
+				data-aos-offset='0'
+			>
 				<h2 className='text-2xl sm:text-3xl font-semibold mb-6 tracking-tight'>
 					Selected Work
 				</h2>
@@ -109,6 +113,7 @@ export default function Home() {
 				id='services'
 				className='mb-20'
 				data-aos='fade-left'
+				data-aos-offset='0'
 			>
 				<h2 className='text-2xl sm:text-3xl font-semibold mb-6 tracking-tight'>
 					What I Can Do for You
@@ -149,6 +154,7 @@ export default function Home() {
 				id='about'
 				className='mb-20'
 				data-aos='fade-right'
+				data-aos-offset='0'
 			>
 				<h2 className='text-2xl sm:text-3xl font-semibold mb-6 tracking-tight'>
 					About Me
@@ -166,7 +172,11 @@ export default function Home() {
 			</section>
 
 			{/* Contact Section */}
-			<section id='contact' data-aos='fade-up'>
+			<section
+				id='contact'
+				data-aos='fade-up'
+				data-aos-offset='0'
+			>
 				<h2 className='text-2xl sm:text-3xl font-semibold mb-6 tracking-tight'>
 					Let’s Work Together
 				</h2>
@@ -181,6 +191,6 @@ export default function Home() {
 					hello@kalvin.dev
 				</a>
 			</section>
-		</main> 
+		</main>
 	);
 }
