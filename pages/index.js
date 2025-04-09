@@ -6,6 +6,10 @@ import { useEffect } from "react";
 export default function Home() {
 	useEffect(() => {
 		AOS.init({ once: true });
+		// Force refresh after small delay to recalculate positions
+		setTimeout(() => {
+			AOS.refresh();
+		}, 200);
 	}, []);
 
 	return (
