@@ -1,6 +1,23 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
+	const { ref: workRef, inView: workInView } = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const { ref: servicesRef, inView: servicesInView } = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const { ref: aboutRef, inView: aboutInView } = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const { ref: contactRef, inView: contactInView } = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
 	return (
 		<main
 			className='min-h-screen bg-black text-white px-4 sm:px-6 py-12 max-w-6xl mx-auto font-sans scroll-smooth'
@@ -18,8 +35,8 @@ export default function Home() {
 				</p>
 				<div className='flex flex-col sm:flex-row gap-4 animate-fade-in delay-200'>
 					<a
-						href='https://calendly.com/kalvinsev/30min'
-							className='bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm shadow-md hover:scale-105 transition-transform text-center'
+						href='#contact'
+						className='bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm shadow-md hover:scale-105 transition-transform text-center'
 					>
 						Book a Free Call
 					</a>
@@ -35,13 +52,18 @@ export default function Home() {
 			{/* Work Section */}
 			<section
 				id='work'
-				className='mb-20 animate-slide-in-up'
+				ref={workRef}
+				className={`mb-20 ${
+					workInView
+						? "animate-slide-in-up"
+						: "opacity-0"
+				}`}
 			>
 				<h2 className='text-2xl sm:text-3xl font-semibold mb-6 tracking-tight animate-fade-in'>
 					Selected Work
 				</h2>
 				<div className='space-y-8'>
-					<div className='bg-gray-700/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in'>
+					<div className='bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in'>
 						<h3 className='text-lg sm:text-xl font-semibold'>
 							Startup Admin Dashboard
 						</h3>
@@ -54,7 +76,7 @@ export default function Home() {
 							hours/month.
 						</p>
 					</div>
-					<div className='bg-gray-700/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in delay-100'>
+					<div className='bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in delay-100'>
 						<h3 className='text-lg sm:text-xl font-semibold'>
 							E-commerce Landing Page
 						</h3>
@@ -66,7 +88,7 @@ export default function Home() {
 							Motion.
 						</p>
 					</div>
-					<div className='bg-gray-700/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in delay-200'>
+					<div className='bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md transition hover:shadow-lg animate-pop-in delay-200'>
 						<h3 className='text-lg sm:text-xl font-semibold'>
 							Creator Client Portal
 						</h3>
@@ -85,7 +107,12 @@ export default function Home() {
 			{/* Services Section */}
 			<section
 				id='services'
-				className='mb-20 animate-slide-in-left'
+				ref={servicesRef}
+				className={`mb-20 ${
+					servicesInView
+						? "animate-slide-in-left"
+						: "opacity-0"
+				}`}
 			>
 				<h2 className='text-2xl sm:text-3xl font-semibold mb-6 tracking-tight animate-fade-in'>
 					What I Can Do for You
@@ -123,7 +150,12 @@ export default function Home() {
 			{/* About Section */}
 			<section
 				id='about'
-				className='mb-20 animate-slide-in-right'
+				ref={aboutRef}
+				className={`mb-20 ${
+					aboutInView
+						? "animate-slide-in-right"
+						: "opacity-0"
+				}`}
 			>
 				<h2 className='text-2xl sm:text-3xl font-semibold mb-6 tracking-tight animate-fade-in'>
 					About Me
@@ -141,7 +173,15 @@ export default function Home() {
 			</section>
 
 			{/* Contact Section */}
-			<section id='contact' className='animate-fade-in'>
+			<section
+				id='contact'
+				ref={contactRef}
+				className={`${
+					contactInView
+						? "animate-fade-in"
+						: "opacity-0"
+				}`}
+			>
 				<h2 className='text-2xl sm:text-3xl font-semibold mb-6 tracking-tight animate-fade-in'>
 					Let’s Work Together
 				</h2>
